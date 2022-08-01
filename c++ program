@@ -1,0 +1,49 @@
+#include <iostream>
+
+using namespace std;
+
+template<class T>
+class rectangle
+{
+    private:
+     T length;
+     T breadth;
+    public:
+     rectangle(){length=breadth=1;};
+     rectangle(T l,T b);
+     T area();
+     T perimeter();
+     void setlength(T l){
+         length=l;
+     }
+     T getlength(){
+         return length;
+     }
+};
+template<class T>
+rectangle<T>::rectangle(T l,T b)
+{
+    length=l;
+    breadth=b;
+}
+template<class T>
+T rectangle<T>::area()
+{
+    return length*breadth;
+}
+template<class T>
+T rectangle<T>::perimeter()
+{   
+    return 2*(length+breadth);
+}
+int main()
+{  
+    rectangle r={10,5};
+    cout<<r.area()<<endl;
+    cout<<r.perimeter()<<endl;
+    r.setlength(20);
+    cout<<r.getlength();
+
+}
+
+
